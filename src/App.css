@@ -1,0 +1,216 @@
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+h3 {
+  color: #555;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+h4 {
+  color: #666;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+ol, ul {
+  color: #555;
+  line-height: 1.6;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.input {
+  font-size: 16px;
+}
+
+.numbers-display {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+small {
+  color: #888;
+  font-style: italic;
+}
+
+/* Styles pour le chat */
+.message-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.message-input {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid #667eea;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover,
+.suggestion-item.selected {
+  background-color: #667eea;
+  color: white;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.chat-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fafafa;
+}
+
+.message-item {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.own-message {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.other-message {
+  background: white;
+  border: 1px solid #e0e0e0;
+  margin-right: auto;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+}
+
+.own-message .message-header {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.other-message .message-header {
+  color: #666;
+}
+
+.message-content {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 5px;
+  word-wrap: break-word;
+}
+
+.message-indices {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-family: monospace;
+}
+
+.own-message .message-indices {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.other-message .message-indices {
+  color: #888;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .button {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  .message-item {
+    max-width: 95%;
+  }
+  
+  .message-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  
+  .own-message .message-header {
+    align-items: flex-end;
+  }
+}
+
+/* Animation pour les nouveaux messages */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-item {
+  animation: slideIn 0.3s ease-out;
+} 
